@@ -81,6 +81,7 @@ function mostrarMenu(){
                         '\n6. Imprime elemento del arreglo.' + 
                         '\n7. Agrega un elemento al arreglo.' + 
                         '\n8. Elimina un elemento al arreglo.' +
+                        '\n9. Salir.' +
                         '\nIngrese el número de la opción:');
   switch (opcion) {
     case '1':
@@ -107,9 +108,14 @@ function mostrarMenu(){
     case '8':
       eliminaElemento();
       break;
-    default:
-      alert('Opción inválida. Seleccione otra opción.');
-      break;
+      case '9':
+        window.close()
+        alert('Saliendo del programa...');
+        break;
+      default:
+        alert('Opción inválida. Intente nuevamente.');
+        mostrarMenu();
+        break;
   }
 }
 
