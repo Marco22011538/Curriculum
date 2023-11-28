@@ -17,6 +17,7 @@ class Animal {
       "Seleccione una opción:\n" +
         "1. Ingresar información de un animal.\n" +
         "2. Mostrar información de un animal.\n" +
+        "3. Salir.\n" +
         "Ingrese el número de la opción:"
     );
   
@@ -27,10 +28,13 @@ class Animal {
       case "2":
         mostrarInformacion();
         break;
+        case "3":
+          window.close();
+          return;
       default:
-        alert("Opción inválida. Seleccione otra opción.");
-        mostrarMenu();
-        break;
+          alert("Opcion invalidad, seleccione otra opcion.");
+          mostrarMenu();
+          break
     }
   }
   
