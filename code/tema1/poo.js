@@ -4,7 +4,7 @@ class Persona {
     nombre = _nombre;
     edad = _edad;
   }
-
+ // se le pide la informacion del estuadiante 
   saludar() {
     return 'Hola, mi nombre es ' + nombre + ' y tengo ' + edad + ' años.';
   }
@@ -20,13 +20,14 @@ class Estudiante extends Persona {
     return nombre + ' está estudiando el curso de ' + curso;
   }
 }
-
+// mostrar el menu 
 function mostrarMenu() {
   var opcion = prompt(
     "Seleccione una opción:\n" +
       "1. Ingresar información del estuante.\n" +
       "2. Saludo de la persona.\n" +
       "3. Estudios de la persona.\n" +
+      "4. Salir.\n" +
       "Ingrese el número de la opción:"
   );
 
@@ -37,13 +38,17 @@ function mostrarMenu() {
     case "2":
       mostrarSaludo();
       break;
-    case "3":
-      mostrarEstudios();
-      break;
-    default:
-      alert("Opción inválida. Seleccione otra opción.");
-      mostrarMenu();
-      break;
+      case "3":
+        mostrarEstudios();
+        break;
+      case "4" :
+        alert('Saliendo del programa...')
+        window.close()
+        return
+      default:
+        alert('Opción inválida. Por favor, elige una opción válida.')
+        break
+   
   }
 }
 
@@ -63,7 +68,7 @@ let estudiante;
   
   function mostrarSaludo() {
     if (estudiante) {
-      var informacion = estudiante.saludar();
+      var informacion = estudiante.estudiar();
       alert(informacion);
       mostrarMenu();
     } else {
@@ -73,8 +78,8 @@ let estudiante;
   }
 
   function mostrarEstudios() {
-    if (estudiante) {
-      var informacion = estudiante.estudiar();
+    if (animal) {
+      var informacion = estudiante.saludar();
       alert(informacion);
       mostrarMenu();
     } else {
